@@ -64,7 +64,10 @@ MonoBehaviour:
   selectedMat: {fileID: 2800000, guid: 9b1ef59d68c705a41abaf5c0c6099253, type: 3}
   animator: {fileID: 6780437453387871943}
   mesh: {fileID: 3985058035268310516}
+  isTutorialTile: 0
+  tutorialTileindex: 0
   isSelected: 0
+  isEnabled: 1
 --- !u!95 &6780437453387871943
 Animator:
   serializedVersion: 3
@@ -176,9 +179,9 @@ GameObject:
   - component: {fileID: 2242719505732596785}
   - component: {fileID: 1390469165392857557}
   m_Layer: 7
-  m_Name: Sprite
+  m_Name: TileSprite
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

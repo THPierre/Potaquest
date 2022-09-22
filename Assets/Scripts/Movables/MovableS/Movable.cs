@@ -15,7 +15,6 @@ public class Movable : MonoBehaviour
     public MeshRenderer mesh;
     public Rigidbody rb;
     [Space(20)]
-    public TutorialHints tuto;
     private Player player;
     private bool isFalling = false;
     [HideInInspector]
@@ -51,13 +50,6 @@ public class Movable : MonoBehaviour
         if (!enabled) {
             player.animator.SetBool("Magic", false);
             player.animator.SetBool("Idle", true);
-        }
-        //This method below is only called on Tutorial scene;
-        if (enabled && tuto != null){
-            if (tuto != null && tuto.tutoProgress == 4)
-                tuto.NextTutoStep(4);
-            if (tuto != null && tuto.tutoProgress == 6)
-                tuto.NextTutoStep(6);
         }
     }
     private void OnCollisionEnter(Collision collision) {

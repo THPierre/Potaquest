@@ -6,7 +6,8 @@ public class GridManager : MonoBehaviour
 {
     private MovableSelector movableSelector;
     public MovableManager movableMgr;
-    private List<Tile> grid = new List<Tile>();
+    [HideInInspector]
+    public List<Tile> grid = new List<Tile>();
     private void Start() {
         grid.AddRange(GetComponentsInChildren<Tile>());
         movableMgr.GridInit(this);

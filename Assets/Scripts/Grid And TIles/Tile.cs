@@ -9,9 +9,11 @@ public class Tile : MonoBehaviour
     public Animator animator;
     public MeshRenderer mesh;
     public bool isTutorialTile;
-    public bool tutorialTileindex;
+    public int tutorialTileindex;
     [HideInInspector]
     public bool isSelected;
+    [HideInInspector]
+    public bool isEnabled = true;
     private GridManager gridMgr;
     private MovableSelector movableSel;
     public void SelectedMovableSelector(MovableSelector movableSel)
@@ -47,17 +49,20 @@ public class Tile : MonoBehaviour
     }
     public void TileSelector(bool enabled)
     {
-        if (enabled)
+        if (isEnabled)
         {
-            gridMgr.DeselectOtherTiles();
-            gridMgr.SendMovableToSelectedTile(this);
-            mesh.material.mainTexture = selectedMat;
-            isSelected = true;
-        }
-        else
-        {
-            mesh.material.mainTexture = baseMat;
-            isSelected = false;
+            if (enabled)
+            {
+                gridMgr.DeselectOtherTiles();
+                gridMgr.SendMovableToSelectedTile(this);
+                mesh.material.mainTexture = selectedMat;
+                isSelected = true;
+            }
+            else
+            {
+                mesh.material.mainTexture = baseMat;
+                isSelected = false;
+            }
         }
     }
 }

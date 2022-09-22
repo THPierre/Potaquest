@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     public GameObject selectedCloud;
     public GameObject angryCloud;
     [Space(20)]
-    public TutorialHints tuto;
     public Preferences prefs;
     [Space(20)]
     //Player Sounds
@@ -96,12 +95,6 @@ public class Player : MonoBehaviour
         }
         SetSelectedCloudAnim(enabled);
         //This Method below is only called on the tutorial level
-        if (enabled && tuto != null){
-            if (tuto != null && tuto.tutoProgress == 2)
-                tuto.NextTutoStep(2);
-            if (tuto.tutoProgress == 8)
-                tuto.NextTutoStep(8);
-        }
     }
     public void SetPlayerBlockedAnimation(bool enabled){
         angryCloud.SetActive(enabled);
